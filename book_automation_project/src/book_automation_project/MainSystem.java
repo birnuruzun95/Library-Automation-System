@@ -21,7 +21,9 @@ public class MainSystem {
 			System.out.println("\nEnter 0 for load a library." 
 		                      + "\nEnter 1 for save and quit"
 					          + "\nEnter 2 for list all books in library" 
-					          + "\nEnter 3 for add book to library");
+					          + "\nEnter 3 for add book to library"
+					          + "\nEnter 4 for add video/image to archive"
+					          + "\nEnter 5 for load and export video/image/sounds file from archive and play it");
 			int answer = in.nextInt();
 			switch (answer) {
 			case 0:
@@ -36,6 +38,12 @@ public class MainSystem {
 				break;
 			case 3:
 				addBook();
+				break;
+			case 4:
+				
+				break;
+			case 5:
+				
 				break;
 			}
 		}
