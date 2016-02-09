@@ -9,6 +9,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 public class MainSystem {
 
 	static String fileName = null;
@@ -40,7 +44,7 @@ public class MainSystem {
 				addBook();
 				break;
 			case 4:
-				
+				addVIS();
 				break;
 			case 5:
 				
@@ -48,6 +52,56 @@ public class MainSystem {
 			}
 		}
 		System.exit(0);
+	}
+
+	private static void addVIS() {
+		// TODO Auto-generated method stub
+		JFileChooser chooser;
+		FileFilter filter;
+		FileInputStream fis = null;
+		
+		Books book;
+		String bookName;
+		VIS vis;
+		File file = null;
+		byte[] data = null;
+		
+		boolean stop = false;
+		
+		System.out.println("\nEnter book name to put on the file on:");
+		bookName = in.next();
+		book = lib.getBookByName(bookName);
+		if (book == null){
+			System.out.println("book does not exist!");
+		}else{
+			System.out.println("\nChoose your video/image/sound file to and:");
+			try {
+				Thread.sleep(1000);// kullanýcý bu sýrada prompt edebilir diye.//1 sn(1000 ms)
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			chooser = new JFileChooser();
+			filter = new FileNameExtensionFilter("Video/Image/Sounds Files","wav","mp3","avi","mp4","png","jpeg");
+		
+			chooser.addChoosableFileFilter(filter);
+			chooser.setFileFilter(filter);
+			int resultCode = chooser.showOpenDialog(null);
+			if(resultCode == JFileChooser.APPROVE_OPTION){
+				//kullanýcý çift click ile dosya seçebilsin diye APPROVE_OPTIOn kullandým
+				file = chooser.getSelectedFile();
+				data = new byte[(int)file.length()];//kodu bloklamýþ olduk
+			}else{
+				System.out.println("you cancelled adding a VIS");
+				stop = true;
+			}
+			if(!stop){
+				fis = new FileInputStream(file);
+				fis.read(data);
+				fis close();
+				
+			}
+		}
 	}
 
 	private static void addBook() {

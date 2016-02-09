@@ -17,6 +17,18 @@ public class Library extends Object implements Serializable{
 		collection.add(book);
 	}
 	
+	public Books getBookByName(String name){
+		Books v = null;
+		Iterator<Books> i = collection.iterator();
+		while(i.hasNext()){
+			v = i.next();
+			if(v.getBook_name().toLowerCase().contentEquals(name.toLowerCase())){
+				return v;
+			}
+		}
+		return null; 		
+	}
+	
 	@Override
 	public String toString(){
 		String total = "\n";
