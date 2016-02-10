@@ -41,7 +41,7 @@ public class Library extends Object implements Serializable{
 		*/
 		Iterator<Books> i = collection.iterator();
 		while(i.hasNext()){
-			Books b =(Books)i.next(); // burda bir cast iþlemi gerçekleþtirdik.yni deðiþken deðiþtirme iþlemi
+			Books b =(Books)i.next(); // burda bir cast iþlemi gerçekleþtirdik.yani deðiþken deðiþtirme iþlemi
 			total = total+b.toString();			
 		}
 		return total;

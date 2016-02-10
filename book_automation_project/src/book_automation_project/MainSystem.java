@@ -71,7 +71,7 @@ public class MainSystem {
 		System.out.println("\nEnter book name:");
 		bookName = in.next();
 		book = lib.getBookByName(bookName);
-		if(book== null){
+		if(book == null){
 			System.out.println("book does not exist!");
 		}else{
 			System.out.println(book.toString());
@@ -122,8 +122,7 @@ public class MainSystem {
 		} else {
 			System.out.println("\nChoose your video/image/sound file to and:");
 			try {
-				Thread.sleep(1000);// kullanýcý bu sýrada prompt edebilir
-									// diye.//1 sn(1000 ms)
+				Thread.sleep(1000);// kullanýcý bu sýrada prompt edebilir  diye.//1 sn(1000 ms)								
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -135,13 +134,9 @@ public class MainSystem {
 			chooser.setFileFilter(filter);
 			int resultCode = chooser.showOpenDialog(null);
 			if (resultCode == JFileChooser.APPROVE_OPTION) {
-				// kullanýcý çift click ile dosya seçebilsin diye APPROVE_OPTIOn
-				// kullandým
+				// kullanýcý çift click ile dosya seçebilsin diye APPROVE_OPTION kullandým.
 				file = chooser.getSelectedFile();
-				data = new byte[(int) file.length()];// kodu bloklamýþ olduk.
-														// break komutunda bu
-														// kýsma gelecek
-
+				data = new byte[(int) file.length()];// kodu bloklamýþ olduk.Break komutunda bukýsma gelecek;														
 			} else {
 				System.out.println("you cancelled adding a VIS");
 				stop = true;
@@ -158,11 +153,10 @@ public class MainSystem {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				vis = new VIS(file.getName(), data);
+				vis = new VIS(file.getName(),data);
 				book.addVIS(vis);
 
-				System.out.println("You have added" + file.getName()+
-						"to book" + bookName + "\n");
+				System.out.println("You have added" + file.getName()+ "to book" + bookName + "\n");
 			}
 		}
 	}
@@ -206,7 +200,7 @@ public class MainSystem {
 		}
 	}
 
-	private static void loadscript(String fileName2) {
+	private static void loadscript(String fileName) {
 		// TODO Auto-generated method stub
 
 		FileInputStream fis = null;

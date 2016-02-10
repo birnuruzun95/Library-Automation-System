@@ -46,16 +46,16 @@ public class Books implements Serializable {
 
 	@Override
 	public String toString() {
-		String visName = " ";
+		String visNames = "";
 		String visAmount = "(" + String.valueOf(vis.size()) + ")";
 
 		Iterator<VIS> i = vis.iterator();
 		while (i.hasNext()) {
-			visName += i.next().getName() + ",";
+			visNames += i.next().getName() + ",";
 		}
 
 		return "\nBook's Name:" + book_name + "\nWriter:" + writer + 
-				"\nisbn no:" + isbn + "\nVIS files" + visAmount + ":" + visName+ "\n";
+				"\nisbn no:" + isbn + "\nVIS files" + visAmount + ":" + visNames+ "\n";
 	}
 
 }
