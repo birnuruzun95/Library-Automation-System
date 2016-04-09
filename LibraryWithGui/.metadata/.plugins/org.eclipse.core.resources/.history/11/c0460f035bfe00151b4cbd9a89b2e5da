@@ -1,0 +1,57 @@
+package com.library.view;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class AddBookPanel extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+	/*bunu belirttiðimizde AddBookPanel i serializabled olarak implement etmemize gerek kalmýyor*/
+	private Box MainBox, hBox1,hBox2,hBox3,hBox4,hBox5,hBox6,hBox7,hBox8;
+	private JLabel jlIsbn,jlWriter,jlBookName,jlFile,jlLogDog;
+	private JTextField jtfIsbn,jtfWriter,jtfBookName,jtfFile;
+	private JButton bBrowse,bAddFile,bAddBook,bSave,bSaveAndQuit;
+	private JTextArea jtaLog;
+	private JScrollPane scrollPane;
+	
+	public AddBookPanel(){
+		super(new FlowLayout());
+		initWidgets();
+		addwidgets();
+		setBackground(new Color(0,153,153));//ist rgb color for background
+	}
+	private void initWidgets() {
+		
+		MainBox = Box.createVerticalBox();
+		
+		hBox1 = Box.createHorizontalBox();
+		hBox2 = Box.createHorizontalBox();
+		hBox3 = Box.createHorizontalBox();
+		hBox4 = Box.createHorizontalBox();
+		hBox5 = Box.createHorizontalBox();
+		hBox6 = Box.createHorizontalBox();
+		hBox7 = Box.createHorizontalBox();
+		hBox8 = Box.createHorizontalBox();
+		
+		jlIsbn = new JLabel("Enter ISBN");
+		jlWriter = new JLabel ("Enter Writer");
+		jlBookName = new JLabel("Enter Book's Name");
+		jlFile = new JLabel ("Enter the fle name");
+		
+	}
+	private void addwidgets() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+}
+
