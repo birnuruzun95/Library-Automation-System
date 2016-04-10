@@ -12,6 +12,18 @@ public class LibraryInterface extends JFrame{
 	private String filler;
 	
 	public LibraryInterface(String title){
+		super(title);
+		jtb = new JTabbedPane();
+		adp = new AddBookPanel();
+		
+		jtb.addTab("Add Book",adp);
+		
+		add(jtb);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setSize(460,460); // pencere size'ý
+		setResizable(false);
+		
 		
 	}
 }

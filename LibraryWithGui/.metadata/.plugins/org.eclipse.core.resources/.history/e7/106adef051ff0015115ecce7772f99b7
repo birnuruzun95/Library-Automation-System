@@ -1,0 +1,7 @@
+package com.library;
+
+public class RunLibrarySystem {
+	public static void main(Srting[] args){
+		new = LibrarySystem;
+	}
+}

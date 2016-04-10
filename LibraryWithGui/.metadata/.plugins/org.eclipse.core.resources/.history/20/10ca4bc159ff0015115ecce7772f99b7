@@ -1,0 +1,106 @@
+package com.library.view;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class AddBookPanel extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+	/*bunu belirttiðimizde AddBookPanel i serializabled olarak implement etmemize gerek kalmýyor*/
+	private Box MainBox, hBox1,hBox2,hBox3,hBox4,hBox5,hBox6,hBox7,hBox8;
+	private JLabel jlIsbn,jlWriter,jlBookName,jlFile,jlLogDog;
+	private JTextField jtIsbn,jtWriter,jtBookName,jtFile;
+	private JButton bBrowse,bAddFile,bAddBook,bSave,bSaveAndQuit;
+	private JTextArea jtaLog;
+	private JScrollPane scrollPane;
+	
+	public AddBookPanel(){
+		super(new FlowLayout());
+		initWidgets();
+		addwidgets();
+		setBackground(new Color(153,204,255));//ist rgb color for background
+	}
+	private void initWidgets() {
+		
+		MainBox = Box.createVerticalBox();
+		
+		hBox1 = Box.createHorizontalBox();
+		hBox2 = Box.createHorizontalBox();
+		hBox3 = Box.createHorizontalBox();
+		hBox4 = Box.createHorizontalBox();
+		hBox5 = Box.createHorizontalBox();
+		hBox6 = Box.createHorizontalBox();
+		hBox7 = Box.createHorizontalBox();
+		hBox8 = Box.createHorizontalBox();
+		
+		jlIsbn = new JLabel("Enter ISBN:                   ");
+		jlWriter = new JLabel ("Enter Writer:                ");
+		jlBookName = new JLabel("Enter Book's Name:   ");
+		jlFile = new JLabel ("Enter the File Name:   ");
+		jlLogDog = new JLabel ("Enter LogDog:                  			 ");
+		
+		jtIsbn = new JTextField(19);
+		jtWriter = new JTextField(19);
+		jtBookName = new JTextField(19);
+		jtFile = new JTextField(19);
+		
+		jtIsbn.setHorizontalAlignment(JTextField.RIGHT);
+		jtWriter.setHorizontalAlignment(JTextField.RIGHT);
+		jtBookName.setHorizontalAlignment(JTextField.RIGHT);
+		jtFile.setHorizontalAlignment(JTextField.RIGHT);
+				
+		bBrowse = new JButton("BROWSE");
+		bAddFile = new JButton("Add File to Book");
+		bAddBook = new JButton("Add Book");
+		bSave = new JButton("SAVE");
+		bSaveAndQuit = new JButton("Save and Quit");
+		
+		jtaLog = new JTextArea (10,24);
+		jtaLog.setEditable(false);
+		
+		scrollPane = new JScrollPane (jtaLog);
+		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		
+	}
+	private void addwidgets() {
+		hBox1.add(jlIsbn);
+		hBox1.add(jtIsbn);
+		hBox2.add(jlWriter);
+		hBox2.add(jtWriter);
+		hBox3.add(jlBookName);
+		hBox3.add(jtBookName);
+		hBox4.add(jlFile);
+		hBox4.add(jtFile);
+		hBox5.add(Box.createHorizontalStrut(120));
+		hBox5.add(bBrowse);
+		hBox5.add(Box.createHorizontalStrut(25));//diðer butonla arada boþluk býrakmak için
+		hBox5.add(bAddFile);	
+		hBox6.add(jlLogDog);
+		hBox5.add(Box.createHorizontalStrut(20));
+		hBox6.add(bAddBook);
+		hBox5.add(Box.createHorizontalStrut(30));
+		hBox7.add(bSave);
+		hBox7.add(bSaveAndQuit);	
+		
+		MainBox.add(hBox1);
+		MainBox.add(hBox2);
+		MainBox.add(hBox3);
+		MainBox.add(hBox4);
+		MainBox.add(hBox5);
+		MainBox.add(hBox6);	
+		MainBox.add(scrollPane);
+		MainBox.add(hBox7);
+		MainBox.add(hBox8);
+		add(MainBox);
+	}
+}
+
