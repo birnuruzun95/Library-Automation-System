@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.swing.JButton"/>
 <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
-<fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
-<fullyQualifiedTypeName name="java.awt.FlowLayout"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
 <fullyQualifiedTypeName name="javax.swing.JTabbedPane"/>
@@ -11,6 +8,15 @@
 <fullyQualifiedTypeName name="com.library.model.LibrarySystem"/>
 <fullyQualifiedTypeName name="javax.swing.JTextField"/>
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
-<fullyQualifiedTypeName name="javax.swing.Box"/>
 <fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="javax.swing.JTable"/>
+<fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
+<fullyQualifiedTypeName name="java.awt.Dimension"/>
+<fullyQualifiedTypeName name="java.awt.ScrollPane"/>
+<fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
+<fullyQualifiedTypeName name="javax.swing.Box"/>
+<fullyQualifiedTypeName name="com.library.view.BrowseLibraryPanel"/>
+<fullyQualifiedTypeName name="javax.swing.event.ChangeListener"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,111 @@
+package com.library.view;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.ScrollPane;
+
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+public class BrowseLibraryPanel extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+
+	private Box MainBox, hBox1,hBox2,hBox3,hBox4,hBox5;
+	private JLabel jlBookTable, jlFileTable;
+	private JButton bOpenBook, bDeleteBook, bOpenFile,bDeleteFile,bSave, bSaveAndQuit;
+	private JTable tBooks,tFiles;
+	private DefaultTableModel model;
+	private JScrollPane spBookTable , spFileTable;
+	
+	String[] bookColumns = {"BookName","writer","ýsbn"};
+	String[] fileColumns = {"sounds", "images", "videos"};
+	String[][] bookData = { {" "," "," "} };
+	String[][] fileData = { {" "," "," "} };
+	
+	public BrowseLibraryPanel(){
+		super ( new FlowLayout());
+		initWidgets();
+		addWidgets();
+		setBackground(new Color(153,204,255));//ist rgb color for background
+	}
+	private void initWidgets() {
+		MainBox = Box.createVerticalBox();
+		
+		hBox1 = Box.createHorizontalBox();
+		hBox2 = Box.createHorizontalBox();
+		hBox3 = Box.createHorizontalBox();
+		hBox4 = Box.createHorizontalBox();
+		hBox5 = Box.createHorizontalBox();
+		
+		jlBookTable = new JLabel("showing all books in Library");
+		jlFileTable = new JLabel("showing all files in Library"); 
+		
+		bOpenBook = new JButton("open");
+		bDeleteBook = new JButton("delete");
+		bOpenFile = new JButton("open");
+		bDeleteFile = new JButton("delete");
+		bSave = new JButton("save");
+		bSaveAndQuit = new JButton("save&quit");
+		
+		model = new DefaultTableModel(bookData, bookColumns);
+		tBooks = new JTable(model);
+		tBooks.setPreferredScrollableViewportSize(new Dimension(328, 120));
+		tBooks.setFillsViewportHeight(true);
+		tBooks.setAutoCreateRowSorter(true);
+		tBooks.getTableHeader().setReorderingAllowed(false);
+		tBooks.getColumnModel().getColumn(0).setPreferredWidth(200);
+		tBooks.getColumnModel().getColumn(1).setPreferredWidth(150);
+
+		
+		model = new DefaultTableModel(fileData, fileColumns);
+		tFiles = new JTable(model);
+		tFiles.setPreferredScrollableViewportSize(new Dimension(328, 120));
+		tFiles.setFillsViewportHeight(true);
+		tFiles.setAutoCreateRowSorter(true);
+		tFiles.getTableHeader().setReorderingAllowed(false);
+		
+		spBookTable = new JScrollPane(tBooks);
+		spFileTable = new JScrollPane(tFiles);
+		
+		spBookTable.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		spBookTable.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		
+		spFileTable.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		spFileTable.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		}
+	private void addWidgets() {
+		hBox1.add(jlBookTable);
+		hBox1.add(Box.createHorizontalStrut(10));
+		hBox2.add(bDeleteBook);
+		hBox2.add(bOpenBook);
+		hBox3.add(spBookTable);
+		hBox4.add(jlFileTable);
+		hBox4.add(Box.createHorizontalStrut(10));
+		hBox4.add(bDeleteFile);
+		hBox4.add(bOpenFile);
+		
+		MainBox.add(hBox1);
+		MainBox.add(Box.createVerticalStrut(5));
+		MainBox.add(hBox2);
+		MainBox.add(Box.createVerticalStrut(5));
+		MainBox.add(hBox3);
+		MainBox.add(Box.createVerticalStrut(5));
+		MainBox.add(hBox4);
+		MainBox.add(Box.createVerticalStrut(5));
+		MainBox.add(hBox5);
+		MainBox.add(Box.createVerticalStrut(5));
+
+		add(MainBox);
+		
+	}
+
+
+}
+

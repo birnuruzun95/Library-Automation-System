@@ -1,0 +1,51 @@
+package com.library.view;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+
+import javax.swing.Box;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
+public class BrowseLibraryPanel extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+
+	private Box MainBox, hBox1,hBox2,hBox3,hBox4,hBox5;
+	private JLabel jlBookTable, jlFileTable;
+	private JScrollPane spBookTable , spFileTable;
+	
+	String[] bookColumns = {"BookName","writer","ýsbn"};
+	String[] fileColumns = {"sounds", "images", "videos"};
+	String[][] bookData = { {" "," "," "} };
+	String[][] fileData = { {" "," "," "} };
+	
+	public BrowseLibraryPanel(){
+		super ( new FlowLayout());
+		initWidgets();
+		addWidgets();
+		setBackground(new Color(153,204,255));//ist rgb color for background
+	}
+	private void initWidgets() {
+		MainBox = Box.createVerticalBox();
+		
+		hBox1 = Box.createHorizontalBox();
+		hBox2 = Box.createHorizontalBox();
+		hBox3 = Box.createHorizontalBox();
+		hBox4 = Box.createHorizontalBox();
+		hBox5 = Box.createHorizontalBox();
+		
+		jlBookTable = new JLabel("showing all books in Library");
+		jlFileTable = new JLabel("showing all files in Library"); 
+		
+		bOpenBook = new JButton("open");
+	}
+	private void addWidgets() {
+		
+		
+	}
+
+
+}
+

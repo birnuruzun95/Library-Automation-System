@@ -25,7 +25,7 @@ public class AddBookPanel extends JPanel{
 	public AddBookPanel(){
 		super(new FlowLayout());
 		initWidgets();
-		addwidgets();
+		addWidgets();
 		setBackground(new Color(153,204,255));//ist rgb color for background
 	}
 	private void initWidgets() {
@@ -71,7 +71,7 @@ public class AddBookPanel extends JPanel{
 		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		
 	}
-	private void addwidgets() {
+	private void addWidgets() {
 		hBox1.add(jlIsbn);
 		hBox1.add(jtIsbn);
 		hBox2.add(jlWriter);
